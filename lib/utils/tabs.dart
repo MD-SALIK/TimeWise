@@ -10,37 +10,44 @@ class MyTabs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return 
-      Container(
-      
-         height: 100,
-         decoration: BoxDecoration(
-          color: Colors.blue,
-          borderRadius: BorderRadius.all( Radius.circular(30)),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.green,
-              spreadRadius: 4,
-              blurRadius: 4
-              
-            )
-          ]
-         ),
-       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
+      InkWell(
+        onTap: (){
+          
+          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(duration: Duration(milliseconds: 800),
+          content: Text("clicked")));
+        },
+        child: Container(
         
-        Padding(
-          padding: EdgeInsets.only(left: 15),
-          child: Text(type, style: TextStyle(color: Colors.black, fontSize: 30),)),
-          CircleAvatar(
-            radius: 20,
-            child: CircleAvatar(
-              radius: 18,
-              backgroundImage: AssetImage(imgsrc),
-            ),
-          )
-       ]),
-     );
+           height: 100,
+           decoration: BoxDecoration(
+            color: Colors.blue,
+            borderRadius: BorderRadius.all( Radius.circular(30)),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.green,
+                spreadRadius: 4,
+                blurRadius: 4
+                
+              )
+            ]
+           ),
+         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+          
+          Padding(
+            padding: EdgeInsets.only(left: 15),
+            child: Text(type, style: TextStyle(color: Colors.black, fontSize: 30),)),
+            CircleAvatar(
+              radius: 20,
+              child: CircleAvatar(
+                radius: 18,
+                backgroundImage: AssetImage(imgsrc),
+              ),
+            )
+         ]),
+           ),
+      );
         
     
   }
